@@ -1,0 +1,16 @@
+global:
+  scrape_interval: 30s
+  evaluation_interval: 30s
+
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+    static_configs:
+      - targets: [ 'prometheus:9090' ]
+
+  - job_name: 'flask-app'
+    scrape_timeout: 5s
+    static_configs:
+      - targets: ["flask-app:8000"]
