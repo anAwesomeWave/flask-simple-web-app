@@ -8,11 +8,10 @@ services:
 #      - .flask-prometh-env #вроде бы сам образ билдится с ним уже
     ports:
       - "8000:8000"
-
   prometheus:
     image: prom/prometheus:latest
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus-config/prometheus.yml:/etc/prometheus/prometheus.yml
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
     ports:

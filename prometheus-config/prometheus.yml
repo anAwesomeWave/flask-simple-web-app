@@ -11,6 +11,6 @@ scrape_configs:
       - targets: [ 'prometheus:9090' ]
 
   - job_name: 'flask-app'
-    scrape_timeout: 5s
+    scrape_timeout: 20s
     static_configs:
       - targets: ["flask-app:8000"]
