@@ -1,3 +1,3 @@
 ## Simple flask Web app
 
-Postgres running in docker and .env file
+Example of simple Flask web-app with Prometheus and postgres as db.
